@@ -10,7 +10,30 @@ namespace PracticeGitHub
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int guess;
+            Console.WriteLine("Guess a number!");
+            guess = Convert.ToInt32(Console.ReadLine());
+
+            var x = new Random().Next(0, 100);
+            int count = 1;
+            while (x != guess)
+            {
+                if (x > guess)
+                {
+                    Console.WriteLine("Too Low");
+                }
+                if (x < guess)
+                {
+                    Console.WriteLine("Too high");
+                }
+                if (x == guess)
+                {
+                    Console.WriteLine("That's correct!!");
+                }
+                guess = Convert.ToInt32(Console.ReadLine());
+                count++;
+            }
+            Console.WriteLine("It took " + count + " tries");
         }
     }
 }
